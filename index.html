@@ -65,9 +65,28 @@
         sprite0.scale.set(100,100,100);
         scene.add(sprite0);
 
-       
+       // 麦1をスプライトで作成 
+      var texture1 = textureLoader.load("img/basketballcase.png");
+      const material1 = new THREE.SpriteMaterial({ map: texture1,});
+
+      const sprite1 = new THREE.Sprite(material1);
+      sprite1.position.x = 110;
+      sprite1.position.y = 50;
+      sprite1.position.z = -90;
+      sprite1.scale.set(50,100,50);
+      scene.add(sprite1);
         
-            // コートを作成
+      // 麦2をスプライトで作成 
+      var texture2 = textureLoader.load("img/basketgoal.png");
+      const material2 = new THREE.SpriteMaterial({ map: texture2,});
+      const sprite2 = new THREE.Sprite(material2);
+      sprite2.position.x = -130;
+      sprite2.position.y = 50;
+      sprite2.position.z = -120;
+      sprite2.scale.set(50,100,50);
+      scene.add(sprite2);
+
+        // コートを作成
         var texture5 = textureLoader.load("img/basketcoat.png");
         var planeMaterial = new THREE.MeshPhongMaterial();
         planeMaterial.map = texture5;
