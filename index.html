@@ -73,15 +73,15 @@
         planeMaterial.map = texture5;
         
            // バンプマップ読み込み
-      //  var bump = textureLoader.load("jimen-bump.jpg");
-      //  planeMaterial.bumpMap = bump;
-      //  planeMaterial.bumpscale = 1.2;
+       var bump = textureLoader.load("img/basketcoat-bump.png");
+       planeMaterial.bumpMap = bump;
+       planeMaterial.bumpscale = 1.2;
         
-      //   var planeGeometry = new THREE.PlaneGeometry(500,500,50);
-      //     var plane = new THREE.Mesh(planeGeometry,planeMaterial);
-      //     plane.rotation.set( -Math.PI/2, 0, 0 );
-      //    plane.position.set(0,0,0);
-      //      scene.add(plane);
+        var planeGeometry = new THREE.PlaneGeometry(500,500,50);
+          var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+          plane.rotation.set( -Math.PI/2, 0, 0 );
+         plane.position.set(0,0,0);
+           scene.add(plane);
 
 
         tick();
