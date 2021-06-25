@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="OrbitControls.js"></script>
+    <title>課題3 1932160</title>
     <script>
       // ページの読み込みを待つ
       window.addEventListener('load', init);
@@ -31,7 +32,7 @@
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera,document.body);
-  
+
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(100, 100, 100);
@@ -44,45 +45,70 @@
         scene.add(directionalLight2);
 
         // helper
-      const gridHelper = new THREE.GridHelper(200,50); // size, step
-      scene.add(gridHelper);
+      // const gridHelper = new THREE.GridHelper(200,50); 
+      // // size, step
+      // scene.add(gridHelper);
 
-      const axisHelper = new THREE.AxisHelper(200,50);
+      const axisHelper = new THREE.AxisHelper(400,50);
       scene.add(axisHelper);
 
-        // 木0をスプライトで作成
-        var textureLoader = new THREE.TextureLoader();  
-        var texture0 = textureLoader.load("/img/tree0.png");
+        // バスケットゴールをスプライトで作成
+        var textureLoader = new THREE.TextureLoader();
+        var texture0 = textureLoader.load("img/basketgoal.png");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
-
         const sprite0 = new THREE.Sprite(material0);
         sprite0.position.x = 0;
-        sprite0.position.y = 50;
+        sprite0.position.y = 90;
         sprite0.position.z = 0;
-        sprite0.scale.set(100,100,100);
+        sprite0.scale.set(150,230,100);
         scene.add(sprite0);
 
-        // 木1をスプライトで作成 
-        var texture1 = textureLoader.load("/img/tree1.png");
+        // バスケットボール1をスプライトで作成
+        var texture1 = textureLoader.load("img/basketball.png");
         const material1 = new THREE.SpriteMaterial({ map: texture1,});
-
         const sprite1 = new THREE.Sprite(material1);
-        sprite1.position.x = 100;
+        sprite1.position.x = 110;
         sprite1.position.y = 50;
-        sprite1.position.z = -100;
-        sprite1.scale.set(100,100,100);
+        sprite1.position.z = -90;
+        sprite1.scale.set(50,100,50);
         scene.add(sprite1);
 
-        // 木1をスプライトで作成 
-        var texture2 = textureLoader.load("/img/tree2.png");
+        // バスケットボール2をスプライトで作成
+        var texture2 = textureLoader.load("img/basketball.png");
         const material2 = new THREE.SpriteMaterial({ map: texture2,});
-
         const sprite2 = new THREE.Sprite(material2);
-        sprite2.position.x = -100;
-        sprite2.position.y = 50;
-        sprite2.position.z = -100;
-        sprite2.scale.set(100,100,100);
+        sprite2.position.x = 200;
+        sprite2.position.y = 100;
+        sprite2.position.z = 160;
+        sprite2.scale.set(240,200,50);
         scene.add(sprite2);
+
+        var texture3 = textureLoader.load("img/basketballcase.png");
+  const material3 = new THREE.SpriteMaterial({ map: texture3,});
+
+  const sprite3 = new THREE.Sprite(material3);
+  sprite3.position.x = 200;
+  sprite3.position.y = 100;
+  sprite3.position.z = 160;
+  sprite3.scale.set(240,200,50);
+  scene.add(sprite3);
+
+        // 地面を作成
+  var texture5 = textureLoader.load("img/basketcoat2.png");
+  var planeMaterial = new THREE.MeshPhongMaterial();
+  planeMaterial.map = texture5;
+  
+     // バンプマップ読み込み
+ var bump = textureLoader.load("img/basketcoat.png");
+ planeMaterial.bumpMap = bump;
+ planeMaterial.bumpscale = 1.2;
+  
+  var planeGeometry = new THREE.PlaneGeometry(500,500,50);
+    var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+    plane.rotation.set( -Math.PI/2, 0, 0 );
+   plane.position.set(0,0,0);
+     scene.add(plane);
+
 
         tick();
         // 毎フレーム時に実行されるループイベントです
