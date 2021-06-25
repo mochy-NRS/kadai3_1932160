@@ -55,7 +55,7 @@
 
         // バスケットボールをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture0 = textureLoader.load("img/basketball.png");
+        var texture0 = textureLoader.load("img/basketball1.png");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
 
         const sprite0 = new THREE.Sprite(material0);
@@ -65,7 +65,7 @@
         sprite0.scale.set(100,100,100);
         scene.add(sprite0);
 
-       // 麦1をスプライトで作成 
+       // ボールケースをスプライトで作成 
       var texture1 = textureLoader.load("img/basketballcase.png");
       const material1 = new THREE.SpriteMaterial({ map: texture1,});
 
@@ -76,7 +76,7 @@
       sprite1.scale.set(50,100,50);
       scene.add(sprite1);
         
-      // 麦2をスプライトで作成 
+      // ゴールをスプライトで作成 
       var texture2 = textureLoader.load("img/basketgoal.png");
       const material2 = new THREE.SpriteMaterial({ map: texture2,});
       const sprite2 = new THREE.Sprite(material2);
