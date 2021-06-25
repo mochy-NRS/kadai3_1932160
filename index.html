@@ -53,7 +53,7 @@
 
 
 
-        // カカシをスプライトで作成
+        // バスケットボールをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture0 = textureLoader.load("img/basketball.png");
         const material0 = new THREE.SpriteMaterial({ map: texture0,});
@@ -62,12 +62,12 @@
         sprite0.position.x = 0;
         sprite0.position.y = 90;
         sprite0.position.z = 0;
-        sprite0.scale.set(150,230,100);
+        sprite0.scale.set(100,100,100);
         scene.add(sprite0);
 
        
         
-            // 地面を作成
+            // コートを作成
         var texture5 = textureLoader.load("img/basketcoat.png");
         var planeMaterial = new THREE.MeshPhongMaterial();
         planeMaterial.map = texture5;
